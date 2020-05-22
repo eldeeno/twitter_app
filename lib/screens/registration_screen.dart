@@ -39,14 +39,18 @@ class RegistrationScreen extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Container(
-                  child: Text(
-                    'Create your account',
-                    style: TextStyle(
-                      fontSize: 32.0,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.w500,
+                Padding(
+                  padding: const EdgeInsets.only(left: 40.0),
+                  child: Container(
+                    child: Text(
+                      'Create your account',
+                      style: TextStyle(
+                        fontSize: 32.0,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),
@@ -65,7 +69,8 @@ class RegistrationScreen extends StatelessWidget {
                         Container(
                           child: TextField(
                             decoration: InputDecoration(
-                              hintText: 'Phone number or email address',
+                              hintText: 'Name',
+                              hintStyle: TextStyle(fontWeight: FontWeight.w600),
                             ),
                           ),
                         ),
@@ -76,13 +81,14 @@ class RegistrationScreen extends StatelessWidget {
                             '50',
                             style: TextStyle(
                                 color: Colors.grey,
-                                fontWeight: FontWeight.w500),
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                         Container(
                           child: TextField(
                             decoration: InputDecoration(
                               hintText: 'Phone number or email address',
+                              hintStyle: TextStyle(fontWeight: FontWeight.w600),
                             ),
                           ),
                         ),

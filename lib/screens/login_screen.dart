@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:twitterapp/screens/registration_screen.dart';
 
-class RegistrationScreen extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,37 +14,68 @@ class RegistrationScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         elevation: 0,
-        automaticallyImplyLeading: true,
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(
+              right: 50.0,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                CircleAvatar(
+                  radius: 18.0,
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage('images/logo.png'),
+                ),
+              ],
+            ),
           ),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Container(
-          padding: EdgeInsets.only(right: 50.0),
-//          alignment: Alignment.bottomCenter,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              CircleAvatar(
-                radius: 18.0,
-                backgroundColor: Colors.white,
-                backgroundImage: AssetImage('images/logo.png'),
+          Padding(
+            padding: EdgeInsets.only(
+              right: 20.0,
+              top: 20.0,
+            ),
+            child: InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RegistrationScreen())),
+              child: Text(
+                'Sign up',
+                style: TextStyle(
+                  color: Color(0xff1C9AE6),
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-            ],
+            ),
           ),
-        ),
+          Padding(
+              padding: EdgeInsets.only(right: 10.0),
+              child: GestureDetector(
+                onTap: () {},
+                child: IconButton(
+                  icon: FaIcon(
+                    FontAwesomeIcons.ellipsisV,
+                    color: Color(0xff1C9AE6),
+                    size: 20.0,
+                  ),
+                ),
+              )),
+        ],
       ),
       body: Column(
         children: <Widget>[
           Expanded(
-            flex: 2,
+            flex: 1,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Container(
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: Text(
-                    'Create your account',
+                    'Login to Twitter',
                     style: TextStyle(
                       fontSize: 32.0,
                       color: Colors.black87,
@@ -54,35 +87,51 @@ class RegistrationScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 6,
             child: Column(
               children: <Widget>[
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(left: 40.0, right: 40.0),
+                    padding: EdgeInsets.only(left: 15.0, right: 15.0),
                     child: Column(
                       children: <Widget>[
                         Container(
                           child: TextField(
                             decoration: InputDecoration(
-                              hintText: 'Phone number or email address',
+                              labelText: 'Phone, email or username',
+                              labelStyle: TextStyle(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.grey,
+                              ),
                             ),
                           ),
                         ),
-                        Container(
-                          alignment: Alignment.topRight,
-                          padding: EdgeInsets.only(top: 10),
-                          child: Text(
-                            '50',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500),
-                          ),
+                        SizedBox(
+                          height: 15.0,
                         ),
                         Container(
                           child: TextField(
                             decoration: InputDecoration(
-                              hintText: 'Phone number or email address',
+                              labelText: 'Password',
+                              labelStyle: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              suffixIcon: Icon(Icons.remove_red_eye),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 20.0),
+                          child: InkWell(
+                            child: Text(
+                              'forgot password',
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                         ),
@@ -109,22 +158,16 @@ class RegistrationScreen extends StatelessWidget {
                     right: 15.0,
                   ),
                   child: Container(
-                    width: 70.0,
+                    width: 80.0,
                     child: RaisedButton(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(35.0),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegistrationScreen(),
-                            ));
-                      },
+                      onPressed: () {},
                       color: Color(0xff1C9AE6),
                       textColor: Colors.white,
                       child: Text(
-                        "Next",
+                        "Log in",
                         style: TextStyle(fontSize: 18.0),
                       ),
                     ),

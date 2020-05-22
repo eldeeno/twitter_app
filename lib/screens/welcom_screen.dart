@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:twitterapp/screens/registration_screen.dart';
+import 'package:twitterapp/screens/login_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -91,7 +92,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       width: 5.0,
                     ),
                     InkWell(
-                      onTap: () => Navigator.push(context, MaterialPageRoute()),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen())),
                       child: Text(
                         'Login',
                         style: TextStyle(
