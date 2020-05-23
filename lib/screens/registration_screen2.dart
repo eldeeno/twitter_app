@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:twitterapp/screens/registration_screen2.dart';
 
-class RegistrationScreen extends StatelessWidget {
+class RegistrationScreen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,14 +46,12 @@ class RegistrationScreen extends StatelessWidget {
                     left: 40.0,
                     top: 15.0,
                   ),
-                  child: Container(
-                    child: Text(
-                      'Create your account',
-                      style: TextStyle(
-                        fontSize: 32.0,
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w500,
-                      ),
+                  child: Text(
+                    'Create your account',
+                    style: TextStyle(
+                      fontSize: 32.0,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -62,19 +59,27 @@ class RegistrationScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 7,
             child: Column(
               children: <Widget>[
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(left: 40.0, right: 40.0),
+                    padding: EdgeInsets.only(
+                      left: 40.0,
+                      right: 40.0,
+                    ),
                     child: Column(
                       children: <Widget>[
                         Container(
                           child: TextField(
                             decoration: InputDecoration(
                               hintText: 'Name',
-                              hintStyle: TextStyle(fontWeight: FontWeight.w600),
+                              hintStyle: TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ),
+                              suffixIcon: Icon(
+                                Icons.check_circle_outline,
+                              ),
                             ),
                           ),
                         ),
@@ -88,11 +93,19 @@ class RegistrationScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w600),
                           ),
                         ),
+                        SizedBox(
+                          height: 15.0,
+                        ),
                         Container(
                           child: TextField(
                             decoration: InputDecoration(
-                              hintText: 'Phone number or email address',
-                              hintStyle: TextStyle(fontWeight: FontWeight.w600),
+                              hintText: 'Phone number',
+                              hintStyle: TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ),
+                              suffixIcon: Icon(
+                                Icons.check_circle_outline,
+                              ),
                             ),
                           ),
                         ),
@@ -104,7 +117,7 @@ class RegistrationScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 1,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -118,26 +131,38 @@ class RegistrationScreen extends StatelessWidget {
                     left: 10.0,
                     right: 10.0,
                   ),
-                  child: Container(
-                    width: 70.0,
-                    child: FlatButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(35.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        child: InkWell(
+                          onTap: () => {},
+                          child: Text(
+                            'Use email instead',
+                            style: TextStyle(
+                              color: Color(0xff1C9AE6),
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegistrationScreen2(),
-                            ));
-                      },
-                      color: Color(0xff1C9AE6),
-                      textColor: Colors.white,
-                      child: Text(
-                        "Next",
-                        style: TextStyle(fontSize: 16.0),
+                      Container(
+                        width: 80.0,
+                        child: FlatButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(35.0),
+                          ),
+                          onPressed: () {},
+                          color: Color(0xff1C9AE6),
+                          textColor: Colors.white,
+                          child: Text(
+                            "Next",
+                            style: TextStyle(fontSize: 16.0),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ],

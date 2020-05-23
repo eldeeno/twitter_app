@@ -51,7 +51,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Container(
                       height: 45.0,
                       width: double.infinity,
-                      child: RaisedButton(
+                      child: FlatButton(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(35.0),
                         ),
@@ -93,9 +93,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                     InkWell(
                       onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginScreen())),
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      ),
                       child: Text(
                         'Login',
                         style: TextStyle(
@@ -104,7 +104,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

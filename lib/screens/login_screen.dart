@@ -53,14 +53,12 @@ class LoginScreen extends StatelessWidget {
           ),
           Padding(
               padding: EdgeInsets.only(right: 10.0),
-              child: GestureDetector(
-                onTap: () {},
-                child: IconButton(
-                  icon: FaIcon(
-                    FontAwesomeIcons.ellipsisV,
-                    color: Color(0xff1C9AE6),
-                    size: 20.0,
-                  ),
+              child: IconButton(
+                onPressed: () {},
+                icon: FaIcon(
+                  FontAwesomeIcons.ellipsisV,
+                  color: Color(0xff1C9AE6),
+                  size: 20.0,
                 ),
               )),
         ],
@@ -159,7 +157,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   child: Container(
                     width: 80.0,
-                    child: RaisedButton(
+                    child: FlatButton(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(35.0),
                       ),
@@ -168,7 +166,7 @@ class LoginScreen extends StatelessWidget {
                       textColor: Colors.white,
                       child: Text(
                         "Log in",
-                        style: TextStyle(fontSize: 18.0),
+                        style: TextStyle(fontSize: 16.0),
                       ),
                     ),
                   ),
