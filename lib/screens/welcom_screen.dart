@@ -65,7 +65,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         textColor: Colors.white,
                         child: Text(
                           "Create account",
-                          style: TextStyle(fontSize: 22.0),
+                          style: TextStyle(
+                            fontSize: 22.0,
+                            height: 1.2,
+                          ),
                         ),
                       ),
                     )

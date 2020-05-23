@@ -156,7 +156,7 @@ class LoginScreen extends StatelessWidget {
                     right: 15.0,
                   ),
                   child: Container(
-                    width: 80.0,
+                    width: 70.0,
                     child: FlatButton(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(35.0),
@@ -166,7 +166,7 @@ class LoginScreen extends StatelessWidget {
                       textColor: Colors.white,
                       child: Text(
                         "Log in",
-                        style: TextStyle(fontSize: 16.0),
+                        style: TextStyle(fontSize: 15.0),
                       ),
                     ),
                   ),

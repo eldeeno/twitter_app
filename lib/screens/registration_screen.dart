@@ -135,7 +135,7 @@ class RegistrationScreen extends StatelessWidget {
                       textColor: Colors.white,
                       child: Text(
                         "Next",
-                        style: TextStyle(fontSize: 16.0),
+                        style: TextStyle(fontSize: 15.0),
                       ),
                     ),
                   ),
