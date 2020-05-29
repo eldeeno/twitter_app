@@ -38,7 +38,7 @@ class RegistrationScreen extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
@@ -63,44 +63,54 @@ class RegistrationScreen extends StatelessWidget {
           ),
           Expanded(
             flex: 2,
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.only(left: 40.0, right: 40.0),
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: 'Name',
-                              hintStyle: TextStyle(fontWeight: FontWeight.w600),
-                            ),
+            child: Container(
+              child: SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                      maxHeight: MediaQuery.of(context).size.height),
+                  child: Column(
+                    children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.only(left: 40.0, right: 40.0),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: 'Name',
+                                    hintStyle:
+                                        TextStyle(fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                alignment: Alignment.topRight,
+                                padding: EdgeInsets.only(top: 10),
+                                child: Text(
+                                  '50',
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                              ),
+                              Container(
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: 'Phone number or email address',
+                                    hintStyle:
+                                        TextStyle(fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        Container(
-                          alignment: Alignment.topRight,
-                          padding: EdgeInsets.only(top: 10),
-                          child: Text(
-                            '50',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                        Container(
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: 'Phone number or email address',
-                              hintStyle: TextStyle(fontWeight: FontWeight.w600),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
           ),
           Expanded(

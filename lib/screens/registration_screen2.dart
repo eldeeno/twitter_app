@@ -128,7 +128,6 @@ class RegistrationScreen2 extends StatelessWidget {
                 ),
                 Container(
                   padding: EdgeInsets.only(
-                    bottom: 10.0,
                     left: 10.0,
                     right: 10.0,
                   ),

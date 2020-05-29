@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:twitterapp/screens/registration_screen.dart';
+import 'package:twitterapp/screens/main_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -52,15 +53,16 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Padding(
-              padding: EdgeInsets.only(right: 10.0),
-              child: IconButton(
-                onPressed: () {},
-                icon: FaIcon(
-                  FontAwesomeIcons.ellipsisV,
-                  color: Color(0xff1C9AE6),
-                  size: 20.0,
-                ),
-              )),
+            padding: EdgeInsets.only(right: 10.0),
+            child: IconButton(
+              onPressed: () {},
+              icon: FaIcon(
+                FontAwesomeIcons.ellipsisV,
+                color: Color(0xff1C9AE6),
+                size: 20.0,
+              ),
+            ),
+          ),
         ],
       ),
       body: Column(
@@ -161,7 +163,10 @@ class LoginScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(35.0),
                       ),
-                      onPressed: () {},
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MainScreenScreen())),
                       color: Color(0xff1C9AE6),
                       textColor: Colors.white,
                       child: Text(
