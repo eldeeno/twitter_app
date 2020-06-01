@@ -42,8 +42,118 @@ class MainScreenScreen extends StatelessWidget {
             Divider(),
             Expanded(
               flex: 8,
-              child: Column(
-                children: <Widget>[],
+              child: Container(
+                child: SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                        maxHeight: MediaQuery.of(context).size.height),
+                    child: Column(
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Expanded(
+                                  flex: 2,
+                                  child: CircleAvatar(
+                                    radius: 40.0,
+                                    backgroundColor: Colors.white,
+                                    backgroundImage:
+                                        AssetImage('images/user.png'),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 7,
+                                  child: Container(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text('Shamsuddeen Abdulkadir'),
+                                            Text('@_eldeeno'),
+                                            Text('10h'),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            Text(
+                                                'This is the body of the smaple tweet')
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: <Widget>[
+                                            IconButton(
+                                              onPressed: () {},
+                                              icon: FaIcon(
+                                                FontAwesomeIcons.comment,
+                                                color: Colors.grey,
+                                                size: 15.0,
+                                              ),
+                                            ),
+                                            IconButton(
+                                              onPressed: () {},
+                                              icon: FaIcon(
+                                                FontAwesomeIcons.retweet,
+                                                color: Colors.grey,
+                                                size: 15.0,
+                                              ),
+                                            ),
+                                            IconButton(
+                                              onPressed: () {},
+                                              icon: FaIcon(
+                                                FontAwesomeIcons.home,
+                                                color: Colors.grey,
+                                                size: 15.0,
+                                              ),
+                                            ),
+                                            IconButton(
+                                              onPressed: () {},
+                                              icon: FaIcon(
+                                                FontAwesomeIcons.heart,
+                                                color: Colors.grey,
+                                                size: 15.0,
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    alignment: Alignment.topCenter,
+                                    child: Column(
+                                      children: <Widget>[
+                                        IconButton(
+                                          onPressed: () {},
+                                          icon: FaIcon(
+                                            FontAwesomeIcons.caretDown,
+                                            color: Colors.grey,
+                                            size: 15.0,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
             Divider(),
